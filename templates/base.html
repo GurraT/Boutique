@@ -1,4 +1,4 @@
-{% load static %cd}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -31,14 +31,19 @@
     <title>Botique {% block extra_title %} {% endblock %} </title>
   </head>
   <body>
-    <header class = "container-fluid fixed-top">
+    <header class = "container-fluid fixed-top"></header>
       {% if messages %}
       <div class="message-container"></div>
       {% endif %}
 
       {% block page_header %}
       {% endblock %}
-    </header>
+
+      {% block content %}
+      {% endblock %}
+  
+      {% block postloadjs %}
+      {% endblock %}
 
 
   </body>
