@@ -10,7 +10,6 @@ body {
     font-family: 'Lato';
 }
 
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -39,6 +38,19 @@ body {
     color: white;
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -61,14 +73,14 @@ body {
     background: #000 !important;
 }
 
-.overlay{
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background: white;
-  z-index: -1;  
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
 }
 
 a.category-badge > span.badge:hover {
@@ -112,17 +124,13 @@ a.category-badge > span.badge:hover {
     }
 }
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
     }
 
-    .header-container {
-        padding-top: 164px;
+    body {
+        height: calc(100vh - 116px);
     }
 }
